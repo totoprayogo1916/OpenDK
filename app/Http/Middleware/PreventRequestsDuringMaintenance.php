@@ -29,28 +29,18 @@
  * @link       https://github.com/OpenSID/opendk
  */
 
-namespace App\Providers;
+namespace App\Http\Middleware;
 
-use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
+use Illuminate\Foundation\Http\Middleware\PreventRequestsDuringMaintenance as Middleware;
 
-class AuthServiceProvider extends ServiceProvider
+class PreventRequestsDuringMaintenance extends Middleware
 {
     /**
-     * The policy mappings for the application.
+     * The URIs that should be reachable while maintenance mode is enabled.
      *
-     * @var array<class-string, class-string>
+     * @var array<int, string>
      */
-    protected $policies = [
-        // 'App\Model' => 'App\Policies\ModelPolicy',
+    protected $except = [
+        //
     ];
-
-    /**
-     * Register any authentication / authorization services.
-     *
-     * @return void
-     */
-    public function boot()
-    {
-        $this->registerPolicies();
-    }
 }

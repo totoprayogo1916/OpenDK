@@ -29,28 +29,21 @@
  * @link       https://github.com/OpenSID/opendk
  */
 
-namespace App\Providers;
+namespace App\Http\Middleware;
 
-use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
+use Illuminate\Http\Middleware\TrustHosts as Middleware;
 
-class AuthServiceProvider extends ServiceProvider
+class TrustHosts extends Middleware
 {
     /**
-     * The policy mappings for the application.
+     * Get the host patterns that should be trusted.
      *
-     * @var array<class-string, class-string>
+     * @return array<int, string|null>
      */
-    protected $policies = [
-        // 'App\Model' => 'App\Policies\ModelPolicy',
-    ];
-
-    /**
-     * Register any authentication / authorization services.
-     *
-     * @return void
-     */
-    public function boot()
+    public function hosts()
     {
-        $this->registerPolicies();
+        return [
+            $this->allSubdomainsOfApplicationUrl(),
+        ];
     }
 }
