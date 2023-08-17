@@ -48,7 +48,7 @@ Route::group(['middleware' => ['installed', 'xss_sanitization']], function () {
     /**
      * Group Routing for Halaman Website
      */
-    Route::namespace('Page')->group(function () {
+    Route::namespace('\App\Http\Controllers\Page')->group(function () {
         Route::get('/', 'PageController@index')->name('beranda');
         Route::get('berita-desa', 'PageController@beritaDesa')->name('berita-desa');
         Route::get('filter-berita-desa', 'PageController@filterFeeds')->name('filter-berita-desa');
@@ -146,7 +146,7 @@ Route::group(['middleware' => ['installed', 'xss_sanitization']], function () {
     });
     Route::get('agenda-kegiatan/{slug}', 'Informasi\EventController@show')->name('event.show');
 
-    Route::namespace('SistemKomplain')->group(function () {
+    Route::namespace('\App\Http\Controllers\SistemKomplain')->group(function () {
         Route::group(['prefix' => 'sistem-komplain'], function () {
             Route::get('/', ['as' => 'sistem-komplain.index', 'uses' => 'SistemKomplainController@index']);
             Route::get('kirim', ['as' => 'sistem-komplain.kirim', 'uses' => 'SistemKomplainController@kirim']);
@@ -166,8 +166,8 @@ Route::group(['middleware' => ['installed', 'xss_sanitization']], function () {
     Route::group(['middleware' => 'auth:web'], function () {
         // Route::get('logout', ['as' => 'logout', 'uses' => 'Auth\AuthController@logout']);
 
-        Route::get('/dashboard', 'DashboardController')->name('dashboard');
-        Route::namespace('Auth')->group(function () {
+        Route::get('/dashboard', 'DashboardController@all')->name('dashboard');
+        Route::namespace('\App\Http\Controllers\Auth')->group(function () {
             Route::group(['prefix' => 'changedefault', 'middleware' => ['role:administrator-website|super-admin|admin-kecamatan|kontributor-artikel']], function () {
                 Route::get('/', 'ChangeDefaultController@index')->name('change-default');
                 Route::post('store', ['as' => 'changedefault.store', 'uses' => 'ChangeDefaultController@store']);
@@ -177,7 +177,7 @@ Route::group(['middleware' => ['installed', 'xss_sanitization']], function () {
         /**
          * Group Routing for Informasi
          */
-        Route::namespace('Informasi')->group(function () {
+        Route::namespace('\App\Http\Controllers\Informasi')->group(function () {
             Route::group(['prefix' => 'informasi', 'middleware' => ['role:administrator-website|super-admin|admin-kecamatan|kontributor-artikel']], function () {
                 // Prosedur
                 Route::group(['prefix' => 'prosedur'], function () {
@@ -294,7 +294,7 @@ Route::group(['middleware' => ['installed', 'xss_sanitization']], function () {
         /**
          * Group Routing for Data
          */
-        Route::namespace('Data')->group(function () {
+        Route::namespace('\App\Http\Controllers\Data')->group(function () {
             Route::group(['prefix' => 'data'], function () {
                 // Profil
                 Route::group(['prefix' => 'profil', 'excluded_middleware' => 'xss_sanitization'], function () {
@@ -521,7 +521,7 @@ Route::group(['middleware' => ['installed', 'xss_sanitization']], function () {
         /**
          * Group Routing for Pesan
          */
-        Route::namespace('Pesan')->group(function () {
+        Route::namespace('\App\Http\Controllers\Pesan')->group(function () {
             //Routes Resource Pesan
             Route::group(['prefix' => 'pesan'], function () {
                 Route::get('/', ['as' => 'pesan.index', 'uses' => 'PesanController@index']);
@@ -540,7 +540,7 @@ Route::group(['middleware' => ['installed', 'xss_sanitization']], function () {
         /**
          * Group Routing for Pesan
          */
-        Route::namespace('Surat')->group(function () {
+        Route::namespace('\App\Http\Controllers\Surat')->group(function () {
             Route::group(['prefix' => 'surat', 'middleware' => ['role:super-admin|admin-kecamatan']], function () {
                 //permohonan
                 Route::group(['prefix' => 'permohonan'], function () {
