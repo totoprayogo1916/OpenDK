@@ -1,4 +1,4 @@
-<?php
+ <?php
 
 /*
  * File ini bagian dari:
@@ -44,7 +44,7 @@ class RedirectIfAuthenticated
      * Handle an incoming request.
      *
      * @param Request $request
-     * @param  string[]|null  ...$guards
+     * @param  string|null  ...$guards
      * @return mixed
      */
     public function handle($request, Closure $next, ...$guards)
