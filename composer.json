@@ -13,7 +13,7 @@
         "bensampo/laravel-enum": "^4.0",
         "cviebrock/eloquent-sluggable": "^8.0",
         "doctrine/dbal": "^2.9",
-        "fruitcake/laravel-cors": "^2.0",
+        "fruitcake/laravel-cors": "^3.0",
         "guzzlehttp/guzzle": "^7.0.1",
         "guzzlehttp/psr7": "^1.9",
         "jaybizzle/crawler-detect": "1.*",
