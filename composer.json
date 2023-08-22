@@ -15,7 +15,7 @@
         "doctrine/dbal": "^2.9",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
-        "guzzlehttp/psr7": "^1.9",
+        "guzzlehttp/psr7": "^2.6",
         "jaybizzle/crawler-detect": "1.*",
         "laracasts/flash": "^3.0",
         "laravel/framework": "8.83.27",
