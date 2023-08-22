@@ -33,6 +33,11 @@ if (file_exists(__DIR__.'/../storage/framework/maintenance.php')) {
 
 require __DIR__.'/../vendor/autoload.php';
 
+// https://laracasts.com/discuss/channels/general-discussion/where-do-you-set-public-directory-laravel-5
+$app->bind('path.public', function() {
+    return __DIR__;
+});
+
 /*
 |--------------------------------------------------------------------------
 | Run The Application
