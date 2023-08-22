@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0bcd6217dc2de53ab2c34746948b9e6a",
+    "content-hash": "2a2c405afcba21df3e3275df1eb67ad1",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -6072,16 +6072,16 @@
         },
         {
             "name": "spatie/laravel-collection-macros",
-            "version": "6.3.0",
+            "version": "7.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-collection-macros.git",
-                "reference": "27aefdfaf7012dd217f380ba2a9d6a1fdbe2a2ed"
+                "reference": "5e2fb08deedac70914d88c2d1e3825f16c342561"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-collection-macros/zipball/27aefdfaf7012dd217f380ba2a9d6a1fdbe2a2ed",
-                "reference": "27aefdfaf7012dd217f380ba2a9d6a1fdbe2a2ed",
+                "url": "https://api.github.com/repos/spatie/laravel-collection-macros/zipball/5e2fb08deedac70914d88c2d1e3825f16c342561",
+                "reference": "5e2fb08deedac70914d88c2d1e3825f16c342561",
                 "shasum": ""
             },
             "require": {
@@ -6138,7 +6138,7 @@
             ],
             "support": {
                 "issues": "https://github.com/spatie/laravel-collection-macros/issues",
-                "source": "https://github.com/spatie/laravel-collection-macros/tree/6.3.0"
+                "source": "https://github.com/spatie/laravel-collection-macros/tree/7.6.0"
             },
             "funding": [
                 {
@@ -6146,7 +6146,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-06-10T21:49:52+00:00"
+            "time": "2021-10-15T06:46:47+00:00"
         },
         {
             "name": "spatie/laravel-permission",
