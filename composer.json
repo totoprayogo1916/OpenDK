@@ -12,7 +12,7 @@
         "php": ">=7.4.0",
         "bensampo/laravel-enum": "2",
         "cviebrock/eloquent-sluggable": "^7.0",
-        "doctrine/dbal": "^2.9",
+        "doctrine/dbal": "^3.6",
         "fideloper/proxy": "^4.0",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^6.3.1|^7.0.1",
