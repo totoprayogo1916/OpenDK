@@ -1,7 +1,7 @@
 {
     "private": true,
     "scripts": {
-        "prettier-blade": "./node_modules/.bin/prettier --write resources/**/*.blade.php"
+        "prettier-blade": "prettier --write resources/**/*.blade.php"
     },
     "devDependencies": {
         "@shufo/prettier-plugin-blade": "^1.11.1",
