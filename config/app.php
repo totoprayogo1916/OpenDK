@@ -230,6 +230,7 @@ return [
         /*
          * Package Service Providers...
          */
+        Spatie\Html\HtmlServiceProvider::class,
 
         /*
          * Application Service Providers...
