@@ -18,8 +18,7 @@
         <div class="col-md-12">
             <div class="box box-primary">
 
-                {!! Form::open( [ 'route' => 'data.data-suplemen.store', 'method' => 'post','id' => 'form-faq', 'class' => 'form-horizontal form-label-left' ] ) !!}
-
+                {{ html()->form('POST', route('data.data-suplemen.store'))->id('form-faq')->class('form-horizontal form-label-left')->open() }}
                 <div class="box-body">
 
                     @if (count($errors) > 0)
@@ -47,7 +46,7 @@
                         </div>
                     </div>
                 </div>
-                {!! Form::close() !!}
+                {{ html()->form()->close() }}
             </div>
         </div>
     </div>

@@ -18,7 +18,7 @@
         <div class="col-md-12">
             @include( 'partials.flash_message' )
             
-                {!! Form::open( [ 'route' => 'data.data-desa.store', 'method' => 'post','id' => 'datadesa-ektp', 'class' => 'form-horizontal form-label-left'] ) !!}
+            {{ html()->form('POST', route('data.data-desa.store'))->id('datadesa-ektp')->class('form-horizontal form-label-left')->open() }}
 
                 <div class="box-body">
 
@@ -48,7 +48,7 @@
                         </div>
                     </div>
                 </div>
-                {!! Form::close() !!}
+                {{ html()->form()->close() }}
             </div>
         </div>
     </div>

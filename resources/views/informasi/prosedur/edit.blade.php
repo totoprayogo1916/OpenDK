@@ -31,7 +31,7 @@
                     @endif
 
                     <!-- form start -->
-                    {!!  Form::model($prosedur, [ 'route' => ['informasi.prosedur.update', $prosedur->id], 'method' => 'put','id' => 'form-event', 'class' => 'form-horizontal form-label-left', 'files'=>true ] ) !!}
+                    {{ html()->modelForm($prosedur, 'PUT', route('informasi.prosedur.update', ['prosedur' => $prosedur->id]))->attributes(['enctype' => 'multipart/form-data', 'id' => 'form-event', 'class' => 'form-horizontal form-label-left'])->open() }}
 
                     <div class="box-body">
 
@@ -47,7 +47,7 @@
                             </div>
                         </div>
                     </div>
-                    {!! Form::close() !!}
+                    {{ html()->closeModelForm() }}
             </div>
         </div>
     </div>

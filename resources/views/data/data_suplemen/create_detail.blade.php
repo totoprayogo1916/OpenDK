@@ -19,7 +19,7 @@
         <div class="col-md-12">
             <div class="box box-primary">
 
-                {!! Form::open( [ 'route' => ['data.data-suplemen.storedetail'], 'method' => 'post','id' => 'form-faq', 'class' => 'form-horizontal form-label-left' ] ) !!}
+                {{ html()->form('POST', route('data.data-suplemen.storedetail'))->id('form-faq')->class('form-horizontal form-label-left')->open() }}
 
                 <div class="box-body">
                     <div class="table-responsive">
@@ -66,7 +66,7 @@
                         </div>
                     </div>
                 </div>
-                {!! Form::close() !!}
+                {{ html()->form()->close() }}
             </div>
         </div>
     </div>

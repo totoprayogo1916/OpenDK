@@ -20,7 +20,7 @@
 
                 <div class="box-body">
                     <!-- form start -->
-                    {!! Form::open( [ 'route' => 'informasi.prosedur.store', 'method' => 'post', 'files' => true, 'id' => 'form-prosedur', 'class' => 'form-horizontal form-label-left' ] ) !!}
+                    {{ html()->form('POST', route('informasi.prosedur.store'))->attributes(['id' => 'form-prosedur', 'class' => 'form-horizontal form-label-left', 'enctype' => 'multipart/form-data'])->open() }}
 
                     @if (count($errors) > 0)
 
@@ -46,7 +46,7 @@
                         </div>
                     </div>
                 </div>
-                {!! Form::close() !!}
+                {{ html()->form()->close() }}
             </div>
         </div>
     </div>

@@ -30,7 +30,7 @@
             @endif
 
             <!-- form start -->
-            {!!  Form::model($anggaran, [ 'route' => ['data.anggaran-realisasi.update', $anggaran->id], 'method' => 'put','id' => 'form-anggaran', 'class' => 'form-horizontal form-label-left'] ) !!}
+            {{ html()->modelForm($anggaran, 'PUT', route(['data.anggaran-realisasi.update', $anggaran->id]))->id('form-anggaran')->class('form-horizontal form-label-left')->open() }}
 
             <div class="box-body">
 
@@ -50,7 +50,7 @@
                 </div>
             </div>
 
-            {!! Form::close() !!}
+            {{ html()->closeModelForm() }}
             
         </div>
     </div>

@@ -32,8 +32,7 @@
                     @endif
 
                             <!-- form start -->
-                    {!!  Form::model($desa, [ 'route' => ['data.data-desa.update', $desa->id], 'method' => 'put','id' => 'form-datadesa', 'class' => 'form-horizontal form-label-left'] ) !!}
-
+                    {{ html()->modelForm($desa, 'PUT', route(['data.data-desa.update', $desa->id]))->id('form-datadesa')->class('form-horizontal form-label-left')->open() }}
                     <div class="box-body">
 
                         @include('data.data_desa.form_edit')
@@ -50,7 +49,7 @@
                             </div>
                         </div>
                     </div>
-                    {!! Form::close() !!}
+                    {{ html()->closeModelForm() }}
             </div>
         </div>
     </div>

@@ -31,7 +31,7 @@
 
                 @endif
 
-                {!!  Form::model($akib, [ 'route' => ['data.aki-akb.update', $akib->id], 'method' => 'put','id' => 'form-akib', 'class' => 'form-horizontal form-label-left'] ) !!}
+                {{ html()->modelForm($akib, 'PUT', route(['data.aki-akb.update', $akib->id]))->id('form-akib')->class('form-horizontal form-label-left')->open() }}
 
                 <div class="box-body">
 
@@ -48,7 +48,7 @@
                         </div>
                     </div>
                 </div>
-                {!! Form::close() !!}
+                {{ html()->closeModelForm() }}
             </div>
         </div>
     </div>

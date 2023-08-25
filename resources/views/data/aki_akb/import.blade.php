@@ -19,7 +19,7 @@
     <div class="row">
         <div class="col-md-12">
 
-                {!! Form::open( [ 'route' => 'data.aki-akb.do_import', 'method' => 'post','id' => 'form-import', 'class' => 'form-horizontal form-label-left', 'files' => true ] ) !!}
+            {{ html()->form('POST', route('data.aki-akb.do_import'))->id('form-import')->class('form-horizontal form-label-left')->attributes(['enctype' => 'multipart/form-data'])->open() }}
 
                 <div class="box-body">
 
@@ -88,7 +88,7 @@
                         </div>
                     </div>
                 </div>
-                {!! Form::close() !!}
+                {{ html()->form()->close() }}
             </div>
         </div>
     </div>
