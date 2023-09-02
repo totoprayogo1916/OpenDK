@@ -31,7 +31,7 @@
                     @endif
 
                     <!-- form start -->
-                    {!! Form::model($potensi, ['route' => ['informasi.potensi.update', $potensi->id], 'method' => 'put', 'id' => 'form-potensi', 'class' => 'form-horizontal form-label-left', 'files' => true]) !!}
+                    {{ html()->modelForm($potensi, 'PUT', route('informasi.potensi.update', $potensi->id))->attributes(['id' => 'form-potensi', 'class' => 'form-horizontal form-label-left', 'enctype' =>'multipart/form-data'])->open() }}
 
                     <div class="box-body">
 
@@ -49,7 +49,7 @@
                             </div>
                         </div>
                     </div>
-                    {!! Form::close() !!}
+                    {{ html()->closeModelForm() }}
                 </div>
             </div>
         </div>

@@ -8,7 +8,7 @@
                 <div class="form-group">
                     <label class="control-label" for="judul">Judul Artikel</label>
 
-                    {!! Form::text('judul', null, ['placeholder' => 'Judul Artikel', 'class' => 'form-control']) !!}
+                    {{ html()->text('judul')->attributes(['placeholder' => 'Judul Artikel', 'class' => 'form-control']) }}
                     @if ($errors->has('judul'))
                         <span class="help-block" style="color:red">{{ $errors->first('judul') }}</span>
                     @endif
@@ -18,7 +18,7 @@
                 <div class="form-group">
                     <label class="control-label" for="isi">Isi Artikel</label>
 
-                    {!! Form::textarea('isi', null, ['class' => 'my-editor', 'placeholder' => 'Isi Artikel', 'style' => 'width: 100%; height: 750px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;']) !!}
+                    {{ html()->textarea('isi')->attributes(['class' => 'my-editor', 'placeholder' => 'Isi Artikel', 'style' => 'width: 100%; height: 750px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;']) }}
                     @if ($errors->has('isi'))
                         <span class="help-block" style="color:red">{{ $errors->first('isi') }}</span>
                     @endif
@@ -35,7 +35,7 @@
 
                     <img src="{{ is_img($artikel->gambar ?? null) }}" id="showgambar" style="width:100%; max-height:250px; float:left;" />
 
-                    {!! Form::file('gambar', ['placeholder' => 'Gambar', 'class' => 'form-control', 'id' => 'file-artikel', 'accept' => 'jpg,jpeg,png']) !!}
+                    {{ html()->input('file', 'gambar')->attributes(['placeholder' => 'Gambar', 'class' => 'form-control', 'id' => 'file-artikel', 'accept' => 'jpg,jpeg,png']) }}
                     @if ($errors->has('gambar'))
                         <span class="help-block" style="color:red">{{ $errors->first('gambar') }}</span>
                     @endif
@@ -44,7 +44,7 @@
                 <div class="form-group">
                     <label class="control-label" for="gambar">Status</label>
 
-                    {!! Form::select('status', ['0' => 'Tidak Aktif', '1' => 'Aktif'], null, ['class' => 'form-control']) !!}
+                    {{ html()->select('status', ['0' => 'Tidak Aktif', '1' => 'Aktif'])->attributes(['class' => 'form-control']) }}
                     @if ($errors->has('status'))
                         <span class="help-block" style="color:red">{{ $errors->first('status') }}</span>
                     @endif
