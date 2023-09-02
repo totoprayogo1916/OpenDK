@@ -29,6 +29,8 @@
  * @link       https://github.com/OpenSID/opendk
  */
 
+namespace Database\Seeders;
+
 use Illuminate\Database\Seeder;
 
 class DasKategoriKomplainTableSeeder extends Seeder
