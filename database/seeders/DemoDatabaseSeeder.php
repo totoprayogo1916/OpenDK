@@ -29,32 +29,34 @@
  * @link       https://github.com/OpenSID/opendk
  */
 
-use Database\Seeds\Demo\DemoAKIAKBSeeder;
-use Database\Seeds\Demo\DemoAnggaranRealisasiSeeder;
-use Database\Seeds\Demo\DemoAPBDesaSeeder;
-use Database\Seeds\Demo\DemoArtikelSeeder;
-use Database\Seeds\Demo\DemoDasDataDesaTableSeeder;
-use Database\Seeds\Demo\DemoDasDataUmumTableSeeder;
-use Database\Seeds\Demo\DemoDasPengurusTableSeeder;
-use Database\Seeds\Demo\DemoDasProfilTableSeeder;
-use Database\Seeds\Demo\DemoDokumenSeeder;
-use Database\Seeds\Demo\DemoEpidemiPenyakitSeeder;
-use Database\Seeds\Demo\DemoEventSeeder;
-use Database\Seeds\Demo\DemoFaqSeeder;
-use Database\Seeds\Demo\DemoFasilitasPaudSeeder;
-use Database\Seeds\Demo\DemoImunisasiSeeder;
-use Database\Seeds\Demo\DemoMediaSosialSeeder;
-use Database\Seeds\Demo\DemoPendudukKeluargaSeeder;
-use Database\Seeds\Demo\DemoPesanDetailSeeder;
-use Database\Seeds\Demo\DemoPesanSeeder;
-use Database\Seeds\Demo\DemoPotensiSeeder;
-use Database\Seeds\Demo\DemoProgramBantuanSeeder;
-use Database\Seeds\Demo\DemoProsedurSeeder;
-use Database\Seeds\Demo\DemoPutusSekolahSeeder;
-use Database\Seeds\Demo\DemoRegulasiSeeder;
-use Database\Seeds\Demo\DemoSinergiProgramSeeder;
-use Database\Seeds\Demo\DemoTingkatPendidikanSeeder;
-use Database\Seeds\Demo\DemoToiletSanitasiSeeder;
+namespace Database\Seeders;
+
+use Database\Seeders\Demo\DemoAKIAKBSeeder;
+use Database\Seeders\Demo\DemoAnggaranRealisasiSeeder;
+use Database\Seeders\Demo\DemoAPBDesaSeeder;
+use Database\Seeders\Demo\DemoArtikelSeeder;
+use Database\Seeders\Demo\DemoDasDataDesaTableSeeder;
+use Database\Seeders\Demo\DemoDasDataUmumTableSeeder;
+use Database\Seeders\Demo\DemoDasPengurusTableSeeder;
+use Database\Seeders\Demo\DemoDasProfilTableSeeder;
+use Database\Seeders\Demo\DemoDokumenSeeder;
+use Database\Seeders\Demo\DemoEpidemiPenyakitSeeder;
+use Database\Seeders\Demo\DemoEventSeeder;
+use Database\Seeders\Demo\DemoFaqSeeder;
+use Database\Seeders\Demo\DemoFasilitasPaudSeeder;
+use Database\Seeders\Demo\DemoImunisasiSeeder;
+use Database\Seeders\Demo\DemoMediaSosialSeeder;
+use Database\Seeders\Demo\DemoPendudukKeluargaSeeder;
+use Database\Seeders\Demo\DemoPesanDetailSeeder;
+use Database\Seeders\Demo\DemoPesanSeeder;
+use Database\Seeders\Demo\DemoPotensiSeeder;
+use Database\Seeders\Demo\DemoProgramBantuanSeeder;
+use Database\Seeders\Demo\DemoProsedurSeeder;
+use Database\Seeders\Demo\DemoPutusSekolahSeeder;
+use Database\Seeders\Demo\DemoRegulasiSeeder;
+use Database\Seeders\Demo\DemoSinergiProgramSeeder;
+use Database\Seeders\Demo\DemoTingkatPendidikanSeeder;
+use Database\Seeders\Demo\DemoToiletSanitasiSeeder;
 use Illuminate\Database\Seeder;
 
 class DemoDatabaseSeeder extends Seeder

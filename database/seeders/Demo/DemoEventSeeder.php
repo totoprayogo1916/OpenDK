@@ -29,7 +29,7 @@
  * @link       https://github.com/OpenSID/opendk
  */
 
-namespace Database\Seeds\Demo;
+namespace Database\Seeders\Demo;
 
 use App\Models\Event;
 use Faker\Factory;
