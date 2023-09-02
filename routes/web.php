@@ -29,6 +29,7 @@
  * @link       https://github.com/OpenSID/opendk
  */
 
+use App\Http\Controllers\DashboardController;
 use App\Models\DataDesa;
 use App\Models\Penduduk;
 use Illuminate\Support\Facades\Auth;
@@ -166,7 +167,7 @@ Route::group(['middleware' => ['installed', 'xss_sanitization']], function () {
     Route::group(['middleware' => 'auth:web'], function () {
         // Route::get('logout', ['as' => 'logout', 'uses' => 'Auth\AuthController@logout']);
 
-        Route::get('/dashboard', 'DashboardController@all')->name('dashboard');
+        Route::get('/dashboard', DashboardController::class)->name('dashboard');
         Route::namespace('\App\Http\Controllers\Auth')->group(function () {
             Route::group(['prefix' => 'changedefault', 'middleware' => ['role:administrator-website|super-admin|admin-kecamatan|kontributor-artikel']], function () {
                 Route::get('/', 'ChangeDefaultController@index')->name('change-default');
