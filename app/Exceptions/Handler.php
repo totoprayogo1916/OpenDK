@@ -31,15 +31,21 @@
 
 namespace App\Exceptions;
 
-use App\Models\Profil;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\ValidationException;
-use Sentry\Laravel\Integration;
 use Throwable;
 
 class Handler extends ExceptionHandler
 {
+    /**
+     * A list of exception types with their corresponding custom log levels.
+     *
+     * @var array<int, class-string<\Throwable>>
+     */
+    protected $levels = [
+        //
+    ];
+
     /**
      * A list of the exception types that are not reported.
      *
@@ -50,7 +56,7 @@ class Handler extends ExceptionHandler
     ];
 
     /**
-     * A list of the inputs that are never flashed for validation exceptions.
+     * A list of the inputs that are never flashed to the session on validation exceptions.
      *
      * @var array<int, string>
      */
@@ -69,30 +75,7 @@ class Handler extends ExceptionHandler
     public function register()
     {
         $this->reportable(function (Throwable $e) {
-            \Sentry\configureScope(function (\Sentry\State\Scope $scope) {
-                $profil = Profil::first();
-                $scope->setUser(
-                    [
-                        'nama_provinsi' => $profil->nama_provinsi,
-                        'nama_kabupaten' => $profil->nama_kabupaten,
-                        'nama_kecamatan' => $profil->nama_kecamatan
-                    ]
-                );
-
-                if (Auth::check()) {
-                    $scope->setUser([
-                        'email' => auth()->user()->email,
-                        'name' => auth()->user()->name,
-                        'role' => Auth::user()->getRoleNames()
-                    ]);
-                }
-
-                $scope->setTags([
-                    'kecamatan' =>  $profil->nama_kecamatan,
-                    'versi' => config('app.version')
-                ]);
-            });
-            Integration::captureUnhandledException($e);
+            
         });
     }
 
