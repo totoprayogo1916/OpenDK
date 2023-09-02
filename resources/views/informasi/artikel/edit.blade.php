@@ -15,12 +15,12 @@
 
     <section class="content container-fluid">
 
-        {!! Form::model($artikel, ['route' => ['informasi.artikel.update', $artikel->id], 'method' => 'post', 'id' => 'form-artikel', 'files' => true]) !!}
+        {{ html()->modelForm($artikel, 'post', route('informasi.artikel.update', $artikel->id))->attributes(['id' => 'form-artikel', 'enctype' =>'multipart/form-data'])->open() }}
 
-        @include('flash::message')
-        @include('informasi.artikel._form')
-
-        {!! Form::close() !!}
+            @include('flash::message')
+            @include('informasi.artikel._form')
+        
+        {{ html()->closeModelForm() }}
 
     </section>
 @endsection
