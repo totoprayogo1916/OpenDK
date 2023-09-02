@@ -31,11 +31,8 @@
 
 namespace App\Exceptions;
 
-use App\Models\Profil;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\ValidationException;
-use Sentry\Laravel\Integration;
 use Throwable;
 
 class Handler extends ExceptionHandler
