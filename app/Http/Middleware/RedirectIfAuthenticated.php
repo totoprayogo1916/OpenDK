@@ -38,17 +38,15 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
 
-use function redirect;
-
 class RedirectIfAuthenticated
 {
     /**
      * Handle an incoming request.
      *
-     * @param Request $request
-     * @param  Closure(\Illuminate\Http\Request): (Response|RedirectResponse)  $next
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \Closure(\Illuminate\Http\Request): (\Illuminate\Http\Response|\Illuminate\Http\RedirectResponse)  $next
      * @param  string|null  ...$guards
-     * @return Response|RedirectResponse
+     * @return \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse
      */
     public function handle(Request $request, Closure $next, ...$guards)
     {

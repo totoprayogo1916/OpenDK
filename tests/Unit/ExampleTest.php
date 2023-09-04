@@ -31,7 +31,7 @@
 
 namespace Tests\Unit;
 
-use Tests\TestCase;
+use PHPUnit\Framework\TestCase;
 
 class ExampleTest extends TestCase
 {
@@ -40,7 +40,11 @@ class ExampleTest extends TestCase
      *
      * @return void
      */
-    public function testBasicTest()
+<<<<<<< HEAD
+    public function test_example()
+=======
+    public function test_that_true_is_true()
+>>>>>>> laravel/9.x
     {
         $this->assertTrue(true);
     }

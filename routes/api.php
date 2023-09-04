@@ -36,6 +36,7 @@ use App\Http\Controllers\Api\PembangunanController;
 use App\Http\Controllers\Api\PendudukController;
 use App\Http\Controllers\Api\PesanController;
 use App\Http\Controllers\Api\ProfilDesaController;
+use App\Http\Controllers\Api\ProgamBantuanController;
 use App\Http\Controllers\Api\SuratController;
 use Illuminate\Support\Facades\Route;
 
@@ -65,11 +66,11 @@ Route::group(['prefix' => 'v1', 'middleware' => 'xss_sanitization'], function ()
         Route::get('me', 'me');
     });
 
-    Route::group(['middleware' => ['auth:api', 'role:admin-desa']], function () {
+    Route::group(['middleware' => ['auth:api', 'role:admin-desa'], 'controller' => PendudukController::class], function () {
         /**
          * Penduduk
          */
-        Route::group(['prefix' => 'penduduk', 'controller' => PendudukController::class], function () {
+        Route::group(['prefix' => 'penduduk'], function () {
             Route::post('/', 'store');
             Route::post('storedata', 'storedata');
             Route::post('test', 'test');
@@ -78,15 +79,15 @@ Route::group(['prefix' => 'v1', 'middleware' => 'xss_sanitization'], function ()
         /**
          * Laporan Apbdes
          */
-        Route::group(['prefix' => 'laporan-apbdes'], function () {
-            Route::post('/', [LaporanApbdesController::class, 'store']);
+        Route::group(['prefix' => 'laporan-apbdes', 'controller' => LaporanApbdesController::class], function () {
+            Route::post('/', 'store');
         });
 
         /**
          * Laporan Penduduk
          */
-        Route::group(['prefix' => 'laporan-penduduk'], function () {
-            Route::post('/', [LaporanPendudukController::class, 'store']);
+        Route::group(['prefix' => 'laporan-penduduk', 'controller' => LaporanPendudukController::class], function () {
+            Route::post('/', 'store');
         });
 
         Route::group(['prefix' => 'pesan', 'controller' => PesanController::class], function () {
@@ -106,14 +107,14 @@ Route::group(['prefix' => 'v1', 'middleware' => 'xss_sanitization'], function ()
         /**
         * Identitas Desa
         */
-        Route::group(['prefix' => 'identitas-desa'], function () {
-            Route::post('/', [ProfilDesaController::class, 'store']);
+        Route::group(['prefix' => 'identitas-desa', 'controller' => ProfilDesaController::class], function () {
+            Route::post('/', 'store');
         });
 
         /**
         * Program Bantuan
         */
-        Route::group(['prefix' => 'program-bantuan', 'controller' => ProgramBantuanController::class], function () {
+        Route::group(['prefix' => 'program-bantuan', 'controller' => ProgamBantuanController::class], function () {
             Route::post('/', 'store');
             Route::post('peserta', 'storePeserta');
         });

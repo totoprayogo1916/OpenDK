@@ -45,13 +45,22 @@ use Illuminate\Support\ServiceProvider;
 class AppServiceProvider extends ServiceProvider
 {
     /**
+     * Register any application services.
+     *
+     * @return void
+     */
+    public function register()
+    {
+        //
+    }
+
+    /**
      * Bootstrap any application services.
      *
      * @return void
      */
     public function boot()
     {
-        // default lengt string
         Schema::defaultStringLength(191);
         $this->penduduk();
         $this->config();
@@ -185,14 +194,5 @@ class AppServiceProvider extends ServiceProvider
             }
             return true;
         });
-    }
-
-    /**
-     * Register any application services.
-     *
-     * @return void
-     */
-    public function register()
-    {
     }
 }

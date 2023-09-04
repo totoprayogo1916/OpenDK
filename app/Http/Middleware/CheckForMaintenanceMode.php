@@ -29,19 +29,18 @@
  * @link       https://github.com/OpenSID/opendk
  */
 
-use Illuminate\Support\Facades\Broadcast;
+namespace App\Http\Middleware;
 
-/*
-|--------------------------------------------------------------------------
-| Broadcast Channels
-|--------------------------------------------------------------------------
-|
-| Here you may register all of the event broadcasting channels that your
-| application supports. The given channel authorization callbacks are
-| used to check if an authenticated user can listen to the channel.
-|
-*/
+use Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode as Middleware;
 
-// Broadcast::channel('App.Models.User.{id}', function ($user, $id) {
-//     return (int) $user->id === (int) $id;
-// });
+class CheckForMaintenanceMode extends Middleware
+{
+    /**
+     * The URIs that should be reachable while maintenance mode is enabled.
+     *
+     * @var array
+     */
+    protected $except = [
+        //
+    ];
+}

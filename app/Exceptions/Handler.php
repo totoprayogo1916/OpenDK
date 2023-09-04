@@ -33,6 +33,7 @@ namespace App\Exceptions;
 
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Illuminate\Validation\ValidationException;
+use Illuminate\Support\Facades\Auth;
 use Throwable;
 
 class Handler extends ExceptionHandler
@@ -40,7 +41,7 @@ class Handler extends ExceptionHandler
     /**
      * A list of exception types with their corresponding custom log levels.
      *
-     * @var array<int, class-string<\Throwable>>
+     * @var array<class-string<\Throwable>, \Psr\Log\LogLevel::*>
      */
     protected $levels = [
         //
@@ -49,7 +50,7 @@ class Handler extends ExceptionHandler
     /**
      * A list of the exception types that are not reported.
      *
-     * @var array<int, class-string<Throwable>>
+     * @var array<int, class-string<\Throwable>>
      */
     protected $dontReport = [
         //
@@ -70,27 +71,36 @@ class Handler extends ExceptionHandler
      * Register the exception handling callbacks for the application.
      *
      * @return void
-     *
      */
     public function register()
     {
         $this->reportable(function (Throwable $e) {
-            
-        });
-    }
+        if (app()->bound('sentry') && $this->shouldReport($e)) {
+            \Sentry\configureScope(function (\Sentry\State\Scope $scope) {
+                $profil = Profil::first();
+                $scope->setUser(
+                    [
+                        'nama_provinsi' => $profil->nama_provinsi,
+                        'nama_kabupaten' => $profil->nama_kabupaten,
+                        'nama_kecamatan' => $profil->nama_kecamatan
+                    ]
+                );
 
-    /**
-     * Convert a validation exception into a JSON response.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Illuminate\Validation\ValidationException  $exception
-     * @return \Illuminate\Http\JsonResponse
-     */
-    protected function invalidJson($request, ValidationException $exception)
-    {
-        return response()->json([
-            'message' => __('validation.header'),
-            'errors' => $exception->errors(),
-        ], $exception->status);
+                if (Auth::check()) {
+                    $scope->setUser([
+                        'email' => auth()->user()->email,
+                        'name' => auth()->user()->name,
+                        'role' => Auth::user()->getRoleNames()
+                    ]);
+                }
+
+                $scope->setTags([
+                    'kecamatan' =>  $profil->nama_kecamatan,
+                    'versi' => config('app.version')
+                ]);
+            });
+            app('sentry')->captureException($e);
+        }
+    });
     }
 }
