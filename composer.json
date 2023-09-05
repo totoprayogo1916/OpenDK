@@ -10,7 +10,7 @@
     "homepage": "https://opendk.my.id/",
     "require": {
         "php": "^8.0.2",
-        "bensampo/laravel-enum": "^4",
+        "bensampo/laravel-enum": "*",
         "cviebrock/eloquent-sluggable": "^9.0",
         "doctrine/dbal": "^3.6",
         "fideloper/proxy": "^4.4",
@@ -32,7 +32,7 @@
         "spatie/laravel-collection-macros": "*",
         "spatie/laravel-permission": "^5.5",
         "stevebauman/purify": "^6.0",
-        "tymon/jwt-auth": "^1.0",
+        "tymon/jwt-auth": "^2.0",
         "unisharp/laravel-filemanager": "^2.6",
         "willvincent/feeds": "^2.2",
         "yajra/laravel-datatables-oracle": "~9."

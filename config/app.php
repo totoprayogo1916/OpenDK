@@ -259,8 +259,6 @@ return [
         App\Providers\RouteServiceProvider::class,
 
         Maatwebsite\Excel\ExcelServiceProvider::class,
-        // iSeed
-        Orangehill\Iseed\IseedServiceProvider::class,
         //Captcha
         Mews\Captcha\CaptchaServiceProvider::class,
 
