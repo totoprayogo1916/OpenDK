@@ -717,7 +717,7 @@ Route::group(['middleware' => ['installed', 'xss_sanitization']], function () {
         }
     });
 
-    Route::controller(SitemapController::class)->group(function(){
+    Route::controller(SitemapController::class)->group(function () {
         Route::get('/sitemap', 'index');
         Route::get('/sitemap/prosedur', 'prosedur');
     });

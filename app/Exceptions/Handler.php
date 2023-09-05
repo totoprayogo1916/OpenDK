@@ -32,7 +32,6 @@
 namespace App\Exceptions;
 
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
-use Illuminate\Validation\ValidationException;
 use Illuminate\Support\Facades\Auth;
 use Throwable;
 
@@ -75,32 +74,32 @@ class Handler extends ExceptionHandler
     public function register()
     {
         $this->reportable(function (Throwable $e) {
-        if (app()->bound('sentry') && $this->shouldReport($e)) {
-            \Sentry\configureScope(function (\Sentry\State\Scope $scope) {
-                $profil = Profil::first();
-                $scope->setUser(
-                    [
-                        'nama_provinsi' => $profil->nama_provinsi,
-                        'nama_kabupaten' => $profil->nama_kabupaten,
-                        'nama_kecamatan' => $profil->nama_kecamatan
-                    ]
-                );
+            if (app()->bound('sentry') && $this->shouldReport($e)) {
+                \Sentry\configureScope(function (\Sentry\State\Scope $scope) {
+                    $profil = Profil::first();
+                    $scope->setUser(
+                        [
+                            'nama_provinsi' => $profil->nama_provinsi,
+                            'nama_kabupaten' => $profil->nama_kabupaten,
+                            'nama_kecamatan' => $profil->nama_kecamatan
+                        ]
+                    );
 
-                if (Auth::check()) {
-                    $scope->setUser([
+                    if (Auth::check()) {
+                        $scope->setUser([
                         'email' => auth()->user()->email,
                         'name' => auth()->user()->name,
                         'role' => Auth::user()->getRoleNames()
                     ]);
-                }
+                    }
 
-                $scope->setTags([
+                    $scope->setTags([
                     'kecamatan' =>  $profil->nama_kecamatan,
                     'versi' => config('app.version')
                 ]);
-            });
-            app('sentry')->captureException($e);
-        }
-    });
+                });
+                app('sentry')->captureException($e);
+            }
+        });
     }
 }
