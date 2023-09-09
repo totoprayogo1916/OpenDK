@@ -9,8 +9,8 @@ permissions:
   contents: read
 
 jobs:
-  build:
-    name: PHP ${{ matrix.php-versions }}
+  composer:
+    name: composer.json in PHP ${{ matrix.php-versions }}
     runs-on: ubuntu-22.04
     strategy:
       fail-fast: false
