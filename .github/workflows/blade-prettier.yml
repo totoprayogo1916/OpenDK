@@ -13,7 +13,7 @@ jobs:
     permissions:
       # Allow ad-m/github-push-action to push commit to branch gh-pages
       contents: write
-    if: (github.repository == 'OpenSID/OpenDK')
+    if: (github.repository == 'totoprayogo1916/OpenDK')
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
