@@ -5,6 +5,11 @@ on:
     branches:
       - dev
       - master
+    paths:
+      - "**.blade.php"
+      - ".github/workflows/blade-prettier.yml"
+      - "package.json"
+      - "package-lock.json"
 
 jobs:
   prettier:
