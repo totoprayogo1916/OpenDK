@@ -1,7 +1,7 @@
 <div class="form-group">
     <label for="kategori_id" class="control-label col-md-4 col-sm-3 col-xs-12">Kategori<span class="required">*</span></label>
     <div class="col-md-5 col-sm-5 col-xs-12">
-        {{ html()->select('kategori_id', \App\Models\TipePotensi::pluck('nama_kategori', 'id'))->attributes( ['placeholder' => '-Pilih', 'class' => 'form-control', 'id' => 'kategori_id', 'required']) }}
+        {{ html()->select('kategori_id', \App\Models\TipePotensi::pluck('nama_kategori', 'id'))->attributes(['placeholder' => '-Pilih', 'class' => 'form-control', 'id' => 'kategori_id', 'required']) }}
     </div>
 </div>
 <div class="form-group">

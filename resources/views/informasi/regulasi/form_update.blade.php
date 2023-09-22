@@ -7,7 +7,7 @@
 <div class="form-group">
     <label class="control-label col-md-3 col-sm-3 col-xs-12">Judul <span class="required">*</span></label>
     <div class="col-md-6 col-sm-6 col-xs-12">
-        {{ html()->text('judul')->attributes(['class' => 'form-control', 'placeholder' => 'Judul Regulasi' ,'required']) }}
+        {{ html()->text('judul')->attributes(['class' => 'form-control', 'placeholder' => 'Judul Regulasi', 'required']) }}
     </div>
 </div>
 <div class="form-group">

@@ -30,7 +30,7 @@
                     @endif
 
                     <!-- form start -->
-                    {{ html()->modelForm($prosedur, 'PUT', route('informasi.prosedur.update', $prosedur->id))->attributes(['id' => 'form-event', 'class' => 'form-horizontal form-label-left', 'enctype' =>'multipart/form-data'])->open() }}
+                    {{ html()->modelForm($prosedur, 'PUT', route('informasi.prosedur.update', $prosedur->id))->attributes(['id' => 'form-event', 'class' => 'form-horizontal form-label-left', 'enctype' => 'multipart/form-data'])->open() }}
 
                     <div class="box-body">
 

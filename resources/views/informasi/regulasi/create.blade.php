@@ -18,7 +18,7 @@
             <div class="col-md-12">
                 <div class="box box-primary">
 
-                    {{ html()->form('POST', route('informasi.regulasi.store'))->attributes(['id' => 'form-regulasi', 'class' => 'form-horizontal form-label-left', 'enctype' =>'multipart/form-data'])->open() }}
+                    {{ html()->form('POST', route('informasi.regulasi.store'))->attributes(['id' => 'form-regulasi', 'class' => 'form-horizontal form-label-left', 'enctype' => 'multipart/form-data'])->open() }}
 
                     <div class="box-body">
 
