@@ -57,7 +57,9 @@ use Illuminate\Support\Facades\View;
 
 class Controller extends BaseController
 {
-    use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
+    use AuthorizesRequests;
+    use DispatchesJobs;
+    use ValidatesRequests;
 
     /**
      * Menampilkan Sebutan Wilayah Tingkat III (Kecamatan/Distrik)
