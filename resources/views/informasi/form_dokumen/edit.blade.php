@@ -31,7 +31,7 @@
                     @endif
 
                     <!-- form start -->
-                    {!! Form::model($dokumen, ['route' => ['informasi.form-dokumen.update', $dokumen->id], 'method' => 'put', 'id' => 'form-dokumen', 'class' => 'form-horizontal form-label-left', 'files' => true]) !!}
+                    {{ html()->modelForm($dokumen, 'put', route('informasi.form-dokumen.update', $dokumen->id))->attributes(['id' => 'form-dokumen', 'class' => 'form-horizontal form-label-left', 'enctype' =>'multipart/form-data'])->open() }}
 
                     <div class="box-body">
 
@@ -47,7 +47,7 @@
                             </div>
                         </div>
                     </div>
-                    {!! Form::close() !!}
+                    {{ html()->closeModelForm() }}
                 </div>
             </div>
         </div>
