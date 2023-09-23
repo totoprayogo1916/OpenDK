@@ -5,6 +5,11 @@ on:
     branches:
       - dev
       - master
+      - bug-fix
+    paths:
+      - '**.php'
+      - '!**.blade.php'
+      - '.github/workflows/phpcs.yml'
 
 jobs:
   php-cs-fixer:
@@ -17,10 +22,30 @@ jobs:
         with:
           ref: ${{ github.head_ref }}
 
+      - name: Check if PR repo matches base repo
+        id: check_repo
+        run: |
+          if [[ "${{ github.event.pull_request.head.repo.full_name }}" == "${{ github.repository }}" ]]; then
+            echo "match=true" >> $GITHUB_OUTPUT
+            else
+            echo "match=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Install dependencies
+        run: |
+          if [ -f composer.lock ]; then
+            composer install --no-progress
+          else
+            composer update --no-progress
+          fi
+
       - name: Run PHP CS Fixer
-        uses: docker://oskarstark/php-cs-fixer-ga
-        with:
-          args: --config=.php-cs-fixer.php --allow-risky=yes
+        run: |
+          if [[ "${{ steps.check_repo.outputs.match }}" == "true" ]]; then
+            ./vendor/bin/php-cs-fixer fix --allow-risky=yes
+            else
+            ./vendor/bin/php-cs-fixer fix --allow-risky=yes --verbose --ansi --dry-run --using-cache=no --diff
+          fi
 
       - name: Commit changes
         uses: stefanzweifel/git-auto-commit-action@v4
