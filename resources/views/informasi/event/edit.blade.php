@@ -19,7 +19,8 @@
                 <div class="box box-primary">
 
                     <!-- form start -->
-                    {!! Form::model($event, ['route' => ['informasi.event.update', $event->id], 'method' => 'post', 'id' => 'form-event', 'class' => 'form-horizontal form-label-left', 'files' => true]) !!}
+                    {{ html()->modelForm($event, 'POST', route('informasi.event.update', $event->id))->attributes(['id' => 'form-event', 'class' => 'form-horizontal form-label-left', 'enctype' => 'multipart/form-data'])->open() }}
+
                     @include('layouts.fragments.error_message')
 
                     <div class="box-body">
@@ -37,7 +38,7 @@
                             </div>
                         </div>
                     </div>
-                    {!! Form::close() !!}
+                    {{ html()->closeModelForm() }}
                 </div>
             </div>
         </div>

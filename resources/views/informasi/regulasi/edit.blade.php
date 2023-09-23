@@ -31,7 +31,7 @@
                     @endif
 
                     <!-- form start -->
-                    {!! Form::model($regulasi, ['route' => ['informasi.regulasi.update', $regulasi->id], 'method' => 'put', 'id' => 'form-regulasi', 'class' => 'form-horizontal form-label-left', 'files' => true]) !!}
+                    {{ html()->modelForm($regulasi, 'PUT', route('informasi.regulasi.update', $regulasi->id))->attributes(['id' => 'form-regulasi', 'class' => 'form-horizontal form-label-left', 'enctype' => 'multipart/form-data'])->open() }}
 
                     <div class="box-body">
 
@@ -48,9 +48,8 @@
                             </div>
                         </div>
                     </div>
-                    {!! Form::close() !!}
+                    {{ html()->closeModelForm() }}
                 </div>
             </div>
-        </div>
     </section>
 @endsection
