@@ -15,11 +15,11 @@
 
     <section class="content container-fluid">
 
-        {!! Form::open(['url' => route('informasi.artikel.store'), 'files' => true]) !!}
+        {{ html()->form('post', route('informasi.artikel.store'))->attributes(['enctype' =>'multipart/form-data'])->open()}}
 
         @include('informasi.artikel._form')
 
-        {!! Form::close() !!}
+        {{ html()->form()->close() }}
 
     </section>
 @endsection
