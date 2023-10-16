@@ -4,7 +4,7 @@
         "prettier-blade": "prettier --write resources/**/*.blade.php"
     },
     "devDependencies": {
-        "@shufo/prettier-plugin-blade": "^1.11.1",
+        "@shufo/prettier-plugin-blade": "^1.13.2",
         "prettier": "^3.0.3"
     }
 }
