@@ -292,7 +292,7 @@ return [
     */
 
     'aliases' => Facade::defaultAliases()->merge([
-        // 'ExampleClass' => App\Example\ExampleClass::class,
+        // 'Eloquent' => Illuminate\Database\Eloquent\Model::class,
         'Captcha' => Mews\Captcha\Facades\Captcha::class,
         'Counter' => App\Facades\Counter::class,
         'Excel' => Maatwebsite\Excel\Facades\Excel::class,
