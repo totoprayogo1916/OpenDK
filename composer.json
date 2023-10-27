@@ -10,9 +10,9 @@
     "homepage": "https://opendk.my.id/",
     "require": {
         "php": "^8.0.2",
-        "bensampo/laravel-enum": "^2.2 || ^4.0",
+        "bensampo/laravel-enum": "^6.0",
         "cocur/slugify": "4.2.0",
-        "cviebrock/eloquent-sluggable": "^8.0",
+        "cviebrock/eloquent-sluggable": "^9.0",
         "doctrine/dbal": "^2.9",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.2",
@@ -68,9 +68,6 @@
             "php-http/discovery": true
         },
         "optimize-autoloader": true,
-        "platform": {
-            "php": "7.4"
-        },
         "preferred-install": "dist",
         "sort-packages": true
     },
