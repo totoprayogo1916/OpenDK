@@ -1,4 +1,5 @@
 /node_modules
+/public/build
 /public/hot
 /public/storage
 /public/data/*
@@ -8,6 +9,7 @@
 /.vagrant
 Homestead.json
 Homestead.yaml
+auth.json
 npm-debug.log
 yarn-error.log
 .env
