@@ -14,7 +14,6 @@
         "cocur/slugify": "4.2.0",
         "cviebrock/eloquent-sluggable": "^9.0",
         "doctrine/dbal": "^2.9",
-        "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.2",
         "jaybizzle/crawler-detect": "1.*",
         "laracasts/flash": "^3.0",
