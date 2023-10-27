@@ -76,7 +76,7 @@ class Handler extends ExceptionHandler
     public function register()
     {
         $this->reportable(function (Throwable $e) {
-            \Sentry\configureScope(function (\Sentry\State\Scope $scope) {
+            \Sentry\configureScope(function (\Sentry\State\Scope $scope): void {
                 $profil = Profil::first();
                 $scope->setUser(
                     [
@@ -97,7 +97,6 @@ class Handler extends ExceptionHandler
                     'versi' => config('app.version')
                 ]);
             });
-            app('sentry')->captureException($e);
 
             Integration::captureUnhandledException($e);
         });
