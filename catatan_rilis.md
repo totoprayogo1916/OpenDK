@@ -1,7 +1,4 @@
-Di rilis v2311.0.1 berisi  [untuk diisi] dan perbaikan yang diminta Komunitas OpenDK.
-
-Terima kasih pada [untuk diisi] yang terus berkontribusi.
-
+Di rilis v2312.0.0 berisi peningkatan versi ke laravel 9 dan perbaikan yang diminta Komunitas OpenDK.
 
 #### Perbaikan Bug
 1. [#912](https://github.com/OpenSID/OpenDK/issues/912) Perbaikan notifikasi yang tampil sesuai hak akses yang diberikan.
