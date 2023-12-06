@@ -18,7 +18,7 @@
             <div class="col-md-12">
                 <div class="box box-primary">
 
-                    {!! Form::open(['route' => 'informasi.event.store', 'method' => 'post', 'id' => 'form-event', 'class' => 'form-horizontal form-label-left']) !!}
+                    {{ html()->form('POST', route('informasi.event.store'))->attributes(['id' => 'form-event', 'class' => 'form-horizontal form-label-left'])->open() }}
                     @include('layouts.fragments.error_message')
 
                     <div class="box-body">
@@ -37,7 +37,7 @@
                             </div>
                         </div>
                     </div>
-                    {!! Form::close() !!}
+                    {{ html()->form()->close() }}
                 </div>
             </div>
         </div>

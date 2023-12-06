@@ -19,7 +19,8 @@
                 <div class="box box-primary">
 
                     <!-- form start -->
-                    {!! Form::model($faq, ['route' => ['informasi.faq.update', $faq->id], 'method' => 'post', 'id' => 'form-faq', 'class' => 'form-horizontal form-label-left']) !!}
+                    {{ html()->modelForm($faq, 'post', route('informasi.faq.update', $faq->id))->attributes(['id' => 'form-faq', 'class' => 'form-horizontal form-label-left'])->open() }}
+
                     @include('layouts.fragments.error_message')
 
                     <div class="box-body">
@@ -39,7 +40,7 @@
                             </div>
                         </div>
                     </div>
-                    {!! Form::close() !!}
+                    {{ html()->closeModelForm() }}
                 </div>
             </div>
         </div>

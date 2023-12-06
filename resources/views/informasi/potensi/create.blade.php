@@ -20,7 +20,7 @@
 
                     <div class="box-body">
                         <!-- form start -->
-                        {!! Form::open(['route' => 'informasi.potensi.store', 'method' => 'post', 'files' => true, 'id' => 'form-potensi', 'class' => 'form-horizontal form-label-left']) !!}
+                        {{ html()->form('POST', route('informasi.potensi.store'))->attributes(['id' => 'form-potensi', 'class' => 'form-horizontal form-label-left', 'enctype' => 'multipart/form-data'])->open() }}
 
                         @if (count($errors) > 0)
                             <div class="alert alert-danger">
@@ -47,7 +47,7 @@
                             </div>
                         </div>
                     </div>
-                    {!! Form::close() !!}
+                    {{ html()->form()->close() }}
                 </div>
             </div>
         </div>

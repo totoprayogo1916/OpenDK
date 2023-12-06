@@ -18,7 +18,8 @@
             <div class="col-md-12">
                 <div class="box box-primary">
 
-                    {!! Form::open(['route' => 'informasi.regulasi.store', 'method' => 'post', 'id' => 'form-regulasi', 'class' => 'form-horizontal form-label-left', 'files' => true]) !!}
+                    {{ html()->form('POST', route('informasi.regulasi.store'))->attributes(['id' => 'form-regulasi', 'class' => 'form-horizontal form-label-left', 'enctype' => 'multipart/form-data'])->open() }}
+
                     <div class="box-body">
 
                         @if (count($errors) > 0)
@@ -44,7 +45,7 @@
                             </div>
                         </div>
                     </div>
-                    {!! Form::close() !!}
+                    {{ html()->form()->close() }}
                 </div>
             </div>
         </div>

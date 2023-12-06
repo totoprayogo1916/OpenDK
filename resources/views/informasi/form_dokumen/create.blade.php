@@ -20,7 +20,7 @@
 
                     <div class="box-body">
                         <!-- form start -->
-                        {!! Form::open(['route' => 'informasi.form-dokumen.store', 'method' => 'post', 'files' => true, 'id' => 'form-dokumen', 'class' => 'form-horizontal form-label-left']) !!}
+                        {{ html()->form('post', route('informasi.form-dokumen.store'))->attributes(['id' => 'form-dokumen', 'class' => 'form-horizontal form-label-left', 'enctype' => 'multipart/form-data'])->open() }}
 
                         @if (count($errors) > 0)
                             <div class="alert alert-danger">
@@ -45,7 +45,7 @@
                             </div>
                         </div>
                     </div>
-                    {!! Form::close() !!}
+                    {{ html()->form()->close() }}
                 </div>
             </div>
         </div>
