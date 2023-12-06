@@ -19,7 +19,7 @@
                 <div class="box box-primary">
 
                     <!-- form start -->
-                    {{ html()->modelForm($event, 'POST', route('informasi.event.update', $event->id))->attributes(['id' => 'form-event', 'class' => 'form-horizontal form-label-left', 'enctype' =>'multipart/form-data'])->open() }}
+                    {{ html()->modelForm($event, 'POST', route('informasi.event.update', $event->id))->attributes(['id' => 'form-event', 'class' => 'form-horizontal form-label-left', 'enctype' => 'multipart/form-data'])->open() }}
 
                     @include('layouts.fragments.error_message')
 

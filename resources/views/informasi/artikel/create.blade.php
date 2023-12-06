@@ -15,7 +15,7 @@
 
     <section class="content container-fluid">
 
-        {{ html()->form('post', route('informasi.artikel.store'))->attributes(['enctype' =>'multipart/form-data'])->open()}}
+        {{ html()->form('post', route('informasi.artikel.store'))->attributes(['enctype' => 'multipart/form-data'])->open() }}
 
         @include('informasi.artikel._form')
 

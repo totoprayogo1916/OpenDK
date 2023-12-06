@@ -19,13 +19,13 @@
 <div class="form-group">
     <label class="control-label col-md-3 col-sm-3 col-xs-12">Orang yang hadir <span class="required">*</span></label>
     <div class="col-md-6 col-sm-8 col-xs-12">
-        {{ html()->text('attendants')->attributes(['placeholder' => 'contoh: BAPENAS, GUBERNUR, CAMAT','class' => 'form-control', 'required']) }}
+        {{ html()->text('attendants')->attributes(['placeholder' => 'contoh: BAPENAS, GUBERNUR, CAMAT', 'class' => 'form-control', 'required']) }}
     </div>
 </div>
 <div class="form-group">
     <label class="control-label col-md-3 col-sm-3 col-xs-12">Status <span class="required">*</span></label>
     <div class="col-md-2 col-sm-8 col-xs-12">
-        {{ html()->select('status', ['OPEN' => 'Open', 'CLOSED' => 'Closed'])->attributes(['class' => 'form-control', 'id'=> 'status', 'required']) }}
+        {{ html()->select('status', ['OPEN' => 'Open', 'CLOSED' => 'Closed'])->attributes(['class' => 'form-control', 'id' => 'status', 'required']) }}
     </div>
 </div>
 <div id="attachment_input" class="form-group">

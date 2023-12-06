@@ -20,7 +20,7 @@
 
                     <div class="box-body">
                         <!-- form start -->
-                        {{ html()->form('post', route('informasi.prosedur.store'))->attributes(['id' => 'form-prosedur', 'class' => 'form-horizontal form-label-left','enctype' =>'multipart/form-data'])->open() }}
+                        {{ html()->form('post', route('informasi.prosedur.store'))->attributes(['id' => 'form-prosedur', 'class' => 'form-horizontal form-label-left', 'enctype' => 'multipart/form-data'])->open() }}
 
                         @if (count($errors) > 0)
                             <div class="alert alert-danger">
@@ -45,7 +45,7 @@
                             </div>
                         </div>
                     </div>
-                    {{ html()->form()->close()}}
+                    {{ html()->form()->close() }}
                 </div>
             </div>
         </div>

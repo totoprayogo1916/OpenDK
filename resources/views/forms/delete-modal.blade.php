@@ -10,8 +10,8 @@
             </div>
             <div class="modal-footer">
                 {{ html()->form('DELETE')->attributes(['id' => 'destroy'])->open() }}
-                    <a id="delete-modal-cancel" href="#" class="btn btn-default waves-effect waves-light" data-dismiss="modal">Batal</a>
-                    {{ html()->submit('Hapus')->attributes(['class' => 'btn btn-warning waves-effect waves-light']) }}
+                <a id="delete-modal-cancel" href="#" class="btn btn-default waves-effect waves-light" data-dismiss="modal">Batal</a>
+                {{ html()->submit('Hapus')->attributes(['class' => 'btn btn-warning waves-effect waves-light']) }}
                 {{ html()->form()->close() }}
             </div>
         </div>

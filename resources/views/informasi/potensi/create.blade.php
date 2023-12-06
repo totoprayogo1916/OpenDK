@@ -18,9 +18,9 @@
             <div class="col-md-12">
                 <div class="box box-primary">
 
-                <div class="box-body">
-                    <!-- form start -->
-                    {{ html()->form('POST', route('informasi.potensi.store'))->attributes(['id' => 'form-potensi', 'class' => 'form-horizontal form-label-left', 'enctype' =>'multipart/form-data'])->open() }}
+                    <div class="box-body">
+                        <!-- form start -->
+                        {{ html()->form('POST', route('informasi.potensi.store'))->attributes(['id' => 'form-potensi', 'class' => 'form-horizontal form-label-left', 'enctype' => 'multipart/form-data'])->open() }}
 
                         @if (count($errors) > 0)
                             <div class="alert alert-danger">

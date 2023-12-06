@@ -31,7 +31,7 @@
                     @endif
 
                     <!-- form start -->
-                    {{ html()->modelForm($regulasi, 'PUT', route('informasi.regulasi.update', $regulasi->id))->attributes(['id' => 'form-regulasi', 'class' => 'form-horizontal form-label-left', 'enctype' =>'multipart/form-data'])->open() }}
+                    {{ html()->modelForm($regulasi, 'PUT', route('informasi.regulasi.update', $regulasi->id))->attributes(['id' => 'form-regulasi', 'class' => 'form-horizontal form-label-left', 'enctype' => 'multipart/form-data'])->open() }}
 
                     <div class="box-body">
 
@@ -49,7 +49,7 @@
                         </div>
                     </div>
                     {{ html()->closeModelForm() }}
+                </div>
             </div>
-        </div>
     </section>
 @endsection

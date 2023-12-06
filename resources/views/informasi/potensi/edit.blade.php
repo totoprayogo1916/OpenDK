@@ -31,7 +31,7 @@
                     @endif
 
                     <!-- form start -->
-                    {{ html()->modelForm($potensi, 'PUT', route('informasi.potensi.update', $potensi->id))->attributes(['id' => 'form-potensi', 'class' => 'form-horizontal form-label-left', 'enctype' =>'multipart/form-data'])->open() }}
+                    {{ html()->modelForm($potensi, 'PUT', route('informasi.potensi.update', $potensi->id))->attributes(['id' => 'form-potensi', 'class' => 'form-horizontal form-label-left', 'enctype' => 'multipart/form-data'])->open() }}
 
                     <div class="box-body">
 

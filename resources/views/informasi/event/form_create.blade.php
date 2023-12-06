@@ -1,13 +1,13 @@
 <div class="form-group">
     <label class="control-label col-md-3 col-sm-3 col-xs-12">Nama Kegiatan <span class="required">*</span></label>
     <div class="col-md-6 col-sm-8 col-xs-12">
-        {{ html()->text('event_name')->attributes(['placeholder' => 'Nama kegiatan','class' => 'form-control', 'required']) }}
+        {{ html()->text('event_name')->attributes(['placeholder' => 'Nama kegiatan', 'class' => 'form-control', 'required']) }}
     </div>
 </div>
 <div class="form-group">
     <label class="control-label col-md-3 col-sm-3 col-xs-12">Mulai / Selesai<span class="required">*</span></label>
     <div class="col-md-3 col-sm-8 col-xs-12">
-        {!! html()->text('waktu')->attributes(['id' => 'waktu', 'placeholder' => 'Waktu kegiatan','class' => 'form-control', 'required']) !!}
+        {!! html()->text('waktu')->attributes(['id' => 'waktu', 'placeholder' => 'Waktu kegiatan', 'class' => 'form-control', 'required']) !!}
     </div>
 </div>
 <div class="form-group">
@@ -19,7 +19,7 @@
 <div class="form-group">
     <label class="control-label col-md-3 col-sm-3 col-xs-12">Orang yang hadir <span class="required">*</span></label>
     <div class="col-md-6 col-sm-8 col-xs-12">
-        {{ html()->text('attendants')->attributes(['placeholder' => 'contoh: BAPENAS, GUBERNUR, ' . strtoupper($sebutan_kepala_wilayah),'class' => 'form-control', 'required']) }}
+        {{ html()->text('attendants')->attributes(['placeholder' => 'contoh: BAPENAS, GUBERNUR, ' . strtoupper($sebutan_kepala_wilayah), 'class' => 'form-control', 'required']) }}
     </div>
 </div>
 <div id="attachment_input" class="form-group">
